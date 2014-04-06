@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	    <h2  style="text-align:center">{{ user }} Bienvenido a DevAsk</h2>
+		<h2  style="text-align:center">Ingrese su usuario y su email</h2>
+		
+		<form method="POST" style="text-align:center">
+			{% csrf_token %}
+			<p>
+				<label>Usuario</label>
+				<input type="text" name="username">
+				{{ error_username }}
+		    </p>
+	     	<p>
+				<label>Email</label>
+				<input type="text" name="email">
+				{{ error_email }}
+		    </p>
+				<input type="submit" value="Guardar">
+		</form>
+		
+{% endblock %}
